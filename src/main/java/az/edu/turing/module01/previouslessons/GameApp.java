@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class GameApp {
     public static void main(String[] args) {
+        System.out.println("Leyla");
         Scanner scan = new Scanner(System.in);
         int random = new Random().nextInt(100);
         boolean won = false;
