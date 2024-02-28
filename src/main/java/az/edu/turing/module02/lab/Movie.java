@@ -1,4 +1,4 @@
-package az.edu.turing.module02.tasks;
+package az.edu.turing.module02.lab;
 
 public class Movie {
 
@@ -23,5 +23,23 @@ public class Movie {
     public Movie(String name, double rating){
         this.name = name;
         this.rating = rating;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "name='" + name + '\'' +
+                ", rating=" + rating +
+                '}';
     }
 }
