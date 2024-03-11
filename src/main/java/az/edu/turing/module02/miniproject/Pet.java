@@ -24,6 +24,27 @@ public class Pet {
 
     public Pet() {
     }
+    public void eat() {
+        System.out.println("I am eating");
+    }
+
+    public void respond() {
+        System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
+    }
+
+    public void foul() {
+        System.out.println("I need to cover it up");
+    }
+
+    @Override
+    public String toString() {
+        return species +
+                "{nickname='" + nickname + '\'' +
+                ", age=" + age +
+                ", trickLevel=" + trickLevel +
+                ", habits=" + Arrays.toString(habits) +
+                '}';
+    }
 
     public Pet(Species dog, String robert, String[] habits) {
     }
@@ -68,25 +89,5 @@ public class Pet {
         this.habits = habits;
     }
 
-    public void eat() {
-        System.out.println("I am eating");
-    }
 
-    public void respond() {
-        System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
-    }
-
-    public void foul() {
-        System.out.println("I need to cover it up");
-    }
-
-    @Override
-    public String toString() {
-        return species +
-                "{nickname='" + nickname + '\'' +
-                ", age=" + age +
-                ", trickLevel=" + trickLevel +
-                ", habits=" + Arrays.toString(habits) +
-                '}';
-    }
 }

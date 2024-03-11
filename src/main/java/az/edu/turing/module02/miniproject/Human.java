@@ -80,7 +80,16 @@ public class Human {
     public void setSchedule(String[][] schedule) {
         this.schedule = schedule;
     }
+    public void setSchedule(DayOfWeek dayOfWeek, String activity) {
+        System.out.println(dayOfWeek + "--> " + activity);
+    }
 
+    public void setFamily(Family family) {
+    }
+
+    public Family getFamily() {
+        return family;
+    }
     @Override
     public String toString() {
         return "Human{" +
@@ -109,7 +118,5 @@ public class Human {
         return result;
     }
 
-    public void setSchedule(DayOfWeek dayOfWeek, String activity) {
-        System.out.println(dayOfWeek + "--> " + activity);
-    }
+
 }

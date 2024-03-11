@@ -17,11 +17,12 @@ public class Family {
     }
 
     public void addChild(Human child) {
-        for (int i = 0; i < children.length; i++) {
-            children[i] = child;
+        Human[]newChildren = new Human[children.length+1];
+        System.arraycopy(newChildren, 0, children, 0, children.length);
+        newChildren[children.length] = child;
+        children=newChildren;
+        child.setFamily(this);
         }
-    }
-
     public boolean deleteChild(int index) {
         if (index < 0 || index > children.length) return false;
         else {
