@@ -10,10 +10,9 @@ public class Family {
     private Human[] children;
     private Pet pet;
 
-    public Family(Human mother, Human father, Human[] children) {
+    public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;
-        this.children = children;
     }
 
     public void addChild(Human child) {
@@ -34,6 +33,19 @@ public class Family {
             return true;
         }
     }
+    public boolean deleteChild(Human child) {
+        for (int i = 0; i < children.length; i++) {
+            if (children[i].hashCode() == child.hashCode()) {
+                Human[] deletedChildren = new Human[children.length - 1];
+                System.arraycopy(children, 0, deletedChildren, 0, i);
+                if (deletedChildren.length - i >= 0)
+                    System.arraycopy(children, i + 1, deletedChildren, i, deletedChildren.length - i);
+                children = deletedChildren;
+                return true;
+            }
+        }
+        return false;
+    }
 
     public int countFamily() {
         if (pet != null) {
@@ -42,7 +54,6 @@ public class Family {
             return children.length + 2;
         }
     }
-
 
     public Human getMother() {
         return mother;

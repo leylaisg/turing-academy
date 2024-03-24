@@ -10,12 +10,14 @@ public class Human {
     private int iq;
     private String[][] schedule;
     private Family family;
+    private Pet pet;
 
     public Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
         this.year = year;
     }
+
 
     public Human(String name, String surname, int year, int iq,
                  String[][] schedule) {
@@ -27,6 +29,20 @@ public class Human {
     }
 
     public Human() {
+    }
+
+    public Human(String name, String surname, int year, int iq, Family family, Pet pet) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.family = family;
+        this.pet = pet;
+    }
+
+
+    public void greetPet(){
+        System.out.println("Hello, " + pet.getNickname());
     }
 
     public void welcomeTheFavourite() {
@@ -90,6 +106,15 @@ public class Human {
     public Family getFamily() {
         return family;
     }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
     @Override
     public String toString() {
         return "Human{" +

@@ -2,20 +2,18 @@ package az.edu.turing.module02.miniproject;
 
 import java.util.Arrays;
 
-public class Pet {
+public abstract class Pet {
     private Species species;
     private String nickname;
     private int age;
     private int trickLevel;
     private String[] habits;
 
-    public Pet(Species species, String nickname) {
-        this.species = species;
+    public Pet(String nickname) {
         this.nickname = nickname;
     }
 
-    public Pet(Species species, String nickname, int age, int trickLevel, String[] habits) {
-        this.species = species;
+    public Pet(String nickname, int age, int trickLevel, String[] habits) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
@@ -24,17 +22,19 @@ public class Pet {
 
     public Pet() {
     }
+
+    public Pet(Species species, String nickname) {
+        this.species = species;
+        this.nickname = nickname;
+    }
+
     public void eat() {
         System.out.println("I am eating");
     }
 
-    public void respond() {
-        System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
-    }
+    public abstract void respond();
+//        System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
 
-    public void foul() {
-        System.out.println("I need to cover it up");
-    }
 
     @Override
     public String toString() {
