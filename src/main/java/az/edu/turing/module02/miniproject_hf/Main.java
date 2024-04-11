@@ -1,5 +1,7 @@
 package az.edu.turing.module02.miniproject_hf;
 
+import az.edu.turing.module02.miniproject.Family;
+
 public class Main {
     public static void main(String[] args) {
         String[][] schedule = {{"Monday", "Tuesday"}, {"Reading book", "Going cinema"}};

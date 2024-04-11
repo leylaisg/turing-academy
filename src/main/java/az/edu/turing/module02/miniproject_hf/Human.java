@@ -12,6 +12,7 @@ public class Human {
     private Human mother;
     private Human father;
     private String[][] schedule;
+    private Family family;
 
     public Human(String name, String surname, int year) {
         this.name = name;
@@ -120,11 +121,18 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
     @Override
     public String toString() {
-        return ("Human{name='%s', surname='%s', year=%d, iq=%d, mother=%s, father=%s, pet=%s" +
-                "}").formatted(name, surname, year, iq, mother.getName() + " " +
-                mother.getSurname(), father.getName() + " " + father.getSurname(), pet);
+        return "Human{name='%s', surname='%s', year=%d, iq=%d, schedule=%s}"
+                .formatted(name, surname, year, iq, Arrays.toString(schedule));
     }
 
     @Override
