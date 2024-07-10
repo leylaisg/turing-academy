@@ -12,15 +12,14 @@ import java.util.Optional;
 @Repository
 public class InMemoryStudentRepository implements StudentRepository {
     public static List<StudentEntity> STUDENTS;
-    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     @PostConstruct
     public void init() {
         STUDENTS = List.of(
-                new StudentEntity(1L, "Leyla", 28, true, 93.0, LocalDateTime.now(), LocalDateTime.now()),
-                new StudentEntity(2L, "Aydan", 21, true, 94.0, LocalDateTime.now(), LocalDateTime.now()),
-                new StudentEntity(3L, "Nezrin", 20, true, 95.0, LocalDateTime.now(), LocalDateTime.now())
+                new StudentEntity(1L, "Leyla", 28, true, 93.0, LocalDateTime.parse("11/02/2022 00:00", dateFormatter), LocalDateTime.now()),
+                new StudentEntity(2L, "Aydan", 21, true, 94.0, LocalDateTime.parse("11/02/2022 10:00", dateFormatter), LocalDateTime.now()),
+                new StudentEntity(3L, "Nezrin", 20, true, 95.0, LocalDateTime.parse("01/05/2023 14:10", dateFormatter), LocalDateTime.now())
         );
     }
 
