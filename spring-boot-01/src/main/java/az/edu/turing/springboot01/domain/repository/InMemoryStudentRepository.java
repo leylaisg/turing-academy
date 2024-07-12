@@ -40,6 +40,12 @@ public class InMemoryStudentRepository implements StudentRepository {
 
     @Override
     public void deleteById(Long id) {
-
+        List<StudentEntity> studentEntities = findAll();
+        StudentEntity studentEntity = studentEntities.stream()
+                .filter(student -> student.getId().equals(id)).findFirst().orElse(null);
+        if (studentEntity != null){
+            studentEntities.remove(studentEntity);
+        }
+        System.out.println("Student with indicated id has been deleted");
     }
 }

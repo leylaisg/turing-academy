@@ -13,15 +13,16 @@ public class StudentEntity {
     private Integer age;
     private Boolean gender;
     private Double grade;
-
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
 
-
-    @Override
-    public String toString() {
-        return "{id=%d, fullname='%s', age=%d, gender=%s, grade=%s, created_at=%s, updated_at=%s}"
-                .formatted(id, fullname, age, gender, grade, created_at, updated_at);
+    public StudentEntity(String fullname, Integer age, Boolean gender, Double grade, LocalDateTime created_at,
+                         LocalDateTime updated_at) {
+        this.fullname = fullname;
+        this.age = age;
+        this.gender = gender;
+        this.grade = grade;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 }
-
